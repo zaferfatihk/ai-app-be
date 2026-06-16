@@ -1,3 +1,12 @@
 /home/zaferfatih/Programs/ai-app-be/src/main/java/com/ai_app_be/App.java
-/home/zaferfatih/Programs/ai-app-be/src/main/java/com/ai_app_be/AppConfig.java
-/home/zaferfatih/Programs/ai-app-be/src/main/java/com/ai_app_be/HelloController.java
+/home/zaferfatih/Programs/ai-app-be/src/main/java/com/ai_app_be/configuration/AppConfig.java
+/home/zaferfatih/Programs/ai-app-be/src/main/java/com/ai_app_be/controllers/BaseController.java
+/home/zaferfatih/Programs/ai-app-be/src/main/java/com/ai_app_be/controllers/UserController.java
+/home/zaferfatih/Programs/ai-app-be/src/main/java/com/ai_app_be/dto/CreateUserRequest.java
+/home/zaferfatih/Programs/ai-app-be/src/main/java/com/ai_app_be/dto/UserResponse.java
+/home/zaferfatih/Programs/ai-app-be/src/main/java/com/ai_app_be/model/BaseModel.java
+/home/zaferfatih/Programs/ai-app-be/src/main/java/com/ai_app_be/model/User.java
+/home/zaferfatih/Programs/ai-app-be/src/main/java/com/ai_app_be/repositories/UserRepository.java
+/home/zaferfatih/Programs/ai-app-be/src/main/java/com/ai_app_be/services/AbstractBaseService.java
+/home/zaferfatih/Programs/ai-app-be/src/main/java/com/ai_app_be/services/BaseService.java
+/home/zaferfatih/Programs/ai-app-be/src/main/java/com/ai_app_be/services/UserService.java

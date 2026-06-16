@@ -1,2 +1,7 @@
-com/ai_app_be/HelloControllerTest.class
-com/ai_app_be/integration/HelloControllerIT.class
+com/ai_app_be/support/BaseControllerTest.class
+com/ai_app_be/repositories/UserRepositoryTest.class
+com/ai_app_be/support/BaseRepositoryTest.class
+com/ai_app_be/controllers/UserControllerTest.class
+com/ai_app_be/support/BaseServiceTest.class
+com/ai_app_be/support/TestUrlUtils.class
+com/ai_app_be/services/UserServiceTest.class
