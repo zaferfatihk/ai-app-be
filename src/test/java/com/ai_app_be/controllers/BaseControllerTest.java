@@ -1,14 +1,17 @@
-package com.ai_app_be.support;
-
-import com.ai_app_be.App;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.web.server.LocalServerPort;
+package com.ai_app_be.controllers;
 
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.web.server.LocalServerPort;
+
+import com.ai_app_be.App;
+
+import tools.jackson.databind.json.JsonMapper;
 
 @SpringBootTest(
         classes = App.class,
@@ -22,6 +25,8 @@ import java.net.http.HttpResponse;
         }
 )
 public abstract class BaseControllerTest {
+    protected static final JsonMapper JSON_MAPPER = JsonMapper.builder().build();
+
     @LocalServerPort
     protected int port;
 
@@ -47,6 +52,10 @@ public abstract class BaseControllerTest {
                 .DELETE()
                 .build();
         return httpClient.send(request, HttpResponse.BodyHandlers.ofString());
+    }
+
+    protected long readLongField(String json, String fieldName) {
+        return JSON_MAPPER.readTree(json).required(fieldName).asLong();
     }
 
     private URI uri(String path) {

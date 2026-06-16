@@ -1,17 +1,13 @@
 package com.ai_app_be.controllers;
 
-import com.ai_app_be.support.BaseControllerTest;
-import org.junit.jupiter.api.Test;
-import tools.jackson.databind.json.JsonMapper;
+import static com.ai_app_be.support.TestUrlUtils.encodeQueryParam;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import java.net.http.HttpResponse;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static com.ai_app_be.support.TestUrlUtils.encodeQueryParam;
+import org.junit.jupiter.api.Test;
 
 class UserControllerTest extends BaseControllerTest {
-    private static final JsonMapper JSON_MAPPER = JsonMapper.builder().build();
-
     @Test
     void createsAndFetchesUser() throws Exception {
         HttpResponse<String> createResponse = createUser("controller-ada", "controller-ada@example.com");
@@ -67,9 +63,5 @@ class UserControllerTest extends BaseControllerTest {
                 """.formatted(username, email);
 
         return postJson("/users", json);
-    }
-
-    private long readLongField(String json, String fieldName) {
-        return JSON_MAPPER.readTree(json).required(fieldName).asLong();
     }
 }

@@ -1,7 +1,11 @@
 package com.ai_app_be.model;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -25,6 +29,9 @@ public class User extends BaseModel {
 
     @Column(nullable = false)
     private boolean enabled = true;
+
+    @ManyToMany
+    private Set<Role> roles = new HashSet<>();
 
     public User(String username, String email, String passwordHash) {
         this.username = username;

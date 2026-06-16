@@ -1,11 +1,12 @@
 package com.ai_app_be.services;
 
-import com.ai_app_be.model.User;
-import com.ai_app_be.repositories.UserRepository;
+import java.util.Optional;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Optional;
+import com.ai_app_be.model.User;
+import com.ai_app_be.repositories.UserRepository;
 
 @Service
 @Transactional(readOnly = true)
@@ -31,5 +32,15 @@ public class UserService extends AbstractBaseService<User, Long> {
 
     public boolean existsByEmail(String email) {
         return userRepository.existsByEmail(email);
+    }
+
+    @Transactional
+    public boolean createUser(String username, String email, String passwordHash) {
+        if (existsByUsername(username) || existsByEmail(email)) {
+            return false; // User with the same username or email already exists
+        }
+        User newUser = new User(username, email, passwordHash);
+        userRepository.save(newUser);
+        return true;
     }
 }

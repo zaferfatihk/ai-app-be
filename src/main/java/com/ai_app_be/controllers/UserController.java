@@ -1,9 +1,5 @@
 package com.ai_app_be.controllers;
 
-import com.ai_app_be.dto.CreateUserRequest;
-import com.ai_app_be.dto.UserResponse;
-import com.ai_app_be.model.User;
-import com.ai_app_be.services.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +8,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.ai_app_be.dto.request.CreateUserRequest;
+import com.ai_app_be.dto.response.UserResponse;
+import com.ai_app_be.model.User;
+import com.ai_app_be.services.UserService;
 
 @RestController
 @RequestMapping("/users")

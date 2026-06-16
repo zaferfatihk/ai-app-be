@@ -1,8 +1,8 @@
-package com.ai_app_be.dto;
-
-import com.ai_app_be.model.User;
+package com.ai_app_be.dto.response;
 
 import java.time.Instant;
+
+import com.ai_app_be.model.User;
 
 public record UserResponse(
         Long id,

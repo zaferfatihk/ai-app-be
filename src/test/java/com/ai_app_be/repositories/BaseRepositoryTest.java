@@ -1,9 +1,10 @@
-package com.ai_app_be.support;
+package com.ai_app_be.repositories;
+
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.annotation.Import;
 
 import com.ai_app_be.App;
 import com.ai_app_be.configuration.AppConfig;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.context.annotation.Import;
 
 @SpringBootTest(
         classes = App.class,

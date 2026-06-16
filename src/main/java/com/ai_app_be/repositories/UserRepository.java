@@ -1,9 +1,10 @@
 package com.ai_app_be.repositories;
 
-import com.ai_app_be.model.User;
+import java.util.Optional;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.Optional;
+import com.ai_app_be.model.User;
 
 public interface UserRepository extends JpaRepository<User, Long> {
     Optional<User> findByUsername(String username);

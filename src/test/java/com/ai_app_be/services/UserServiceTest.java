@@ -1,11 +1,11 @@
 package com.ai_app_be.services;
 
-import com.ai_app_be.model.User;
-import com.ai_app_be.support.BaseServiceTest;
+import static org.assertj.core.api.Assertions.assertThat;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import com.ai_app_be.model.User;
 
 class UserServiceTest extends BaseServiceTest {
     @Autowired
